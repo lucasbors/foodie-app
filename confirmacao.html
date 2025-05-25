@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Realizado - Foodie App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<script>
+    // Efeito ao carregar a página
+    document.addEventListener("DOMContentLoaded", function() {
+        document.body.classList.add('show');
+    });
+
+    // Efeito ao trocar de página
+    const links = document.querySelectorAll('a[href]');
+    links.forEach(link => {
+        const url = link.getAttribute('href');
+        if (!url.startsWith('#') && !url.startsWith('javascript') && !link.hasAttribute('target')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.body.classList.remove('show');
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 300); // Tempo menor que o CSS para parecer natural
+            });
+        }
+    });
+</script>
+
+<body class="fade">
+
+    <main>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./images/logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mensagem de Confirmação -->
+    <section class="confirmacao">
+        <div class="container">
+            <h2>Cadastro realizado com sucesso!</h2>
+            <p>Recebemos seus dados. Em breve entraremos em contato para ativar sua conta no Foodie App.</p>
+            <p>Enquanto isso, você já pode baixar o app na Google Play:</p>
+
+            <a href="google-play-simulada.html">
+                <img src="./images/google-play-badge.png" alt="Disponível na Google Play" class="play-button">
+            </a>
+
+            <br><br>
+            <a href="index.html" class="btn">Voltar para o início</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="politica.html">Política de Privacidade</a>
+                <a href="termos.html">Termos de Uso</a>
+                <a href="suporte.html">Suporte</a>
+            </div>
+            <p>&copy; 2025 Foodie App. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+        
+    </main>
+</body>
+</html>

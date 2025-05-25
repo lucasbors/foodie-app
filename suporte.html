@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte - Foodie App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+    // Efeito ao carregar a página
+    document.addEventListener("DOMContentLoaded", function() {
+        document.body.classList.add('show');
+    });
+
+    // Efeito ao trocar de página
+    const links = document.querySelectorAll('a[href]');
+    links.forEach(link => {
+        const url = link.getAttribute('href');
+        if (!url.startsWith('#') && !url.startsWith('javascript') && !link.hasAttribute('target')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.body.classList.remove('show');
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 300); // Tempo menor que o CSS para parecer natural
+            });
+        }
+    });
+</script>
+
+<body class="fade">
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./images/logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pagina-info">
+        <div class="container">
+            <h1>Suporte</h1>
+            <p>Estamos aqui para ajudar! Se você tiver dúvidas, problemas ou sugestões, entre em contato conosco.</p>
+
+            <h2>Fale Conosco</h2>
+            <p>Envie um e-mail para: <a href="mailto:suporte@foodieapp.com">suporte@foodieapp.com</a></p>
+            <p>Ou envie uma mensagem pelo WhatsApp: <a href="https://wa.me/55SEUNUMERO" target="_blank">(XX) XXXXX-XXXX</a></p>
+
+            <h2>Horário de Atendimento</h2>
+            <p>De segunda a sexta, das 9h às 18h (horário de Brasília).</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="politica.html">Política de Privacidade</a>
+                <a href="termos.html">Termos de Uso</a>
+                <a href="suporte.html">Suporte</a>
+            </div>
+            <p>&copy; 2025 Foodie App. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

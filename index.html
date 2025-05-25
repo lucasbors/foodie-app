@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie App - Seu Cardápio na Palma da Mão</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<script>
+    // Efeito ao carregar a página
+    document.addEventListener("DOMContentLoaded", function() {
+        document.body.classList.add('show');
+    });
+
+    // Efeito ao trocar de página
+    const links = document.querySelectorAll('a[href]');
+    links.forEach(link => {
+        const url = link.getAttribute('href');
+        if (!url.startsWith('#') && !url.startsWith('javascript') && !link.hasAttribute('target')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.body.classList.remove('show');
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 300); // Tempo menor que o CSS para parecer natural
+            });
+        }
+    });
+</script>
+
+<body class="fade">
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./images/logo.png" alt="Logo Foodie App">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#precos">Preços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Seu cardápio digital na palma da mão</h1>
+                <p>Cadastre seus lanches, atualize seu cardápio e facilite suas vendas. Simples, rápido e prático.</p>
+                <a href="cadastro.html" class="btn">Quero meu Foodie App</a>
+            </div>
+            <div class="hero-image">
+                <img src="./images/004-portrait.png" alt="Mockup do app">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="sobre">
+        <div class="container content-section">
+            <div class="text">
+                <h2>O que é o Foodie App?</h2>
+                <p>O Foodie App é uma solução prática para quem deseja ter um cardápio digital moderno e atualizado. Organize seus lanches, controle seus produtos e compartilhe com seus clientes de forma profissional.</p>
+                <p>Ideal para lanchonetes, food trucks, delivery, pequenos negócios ou até uso pessoal.</p>
+            </div>
+            <div class="image">
+                <img src="./images/002-left.png" alt="Ilustração app">
+            </div>
+        </div>
+    </section>
+
+    <!-- Funcionalidades -->
+    <section id="funcionalidades" class="funcionalidades">
+        <div class="container">
+            <h2>Funcionalidades do Foodie App</h2>
+            <div class="cards">
+
+                <div class="card">
+                    <img src="./images/cadastro.png" alt="Ícone cadastro" class="icon">
+                    <h3>Cadastro com Imagens</h3>
+                    <p>Adicione fotos, descrições e preços dos seus produtos.</p>
+                </div>
+
+                <div class="card">
+                    <img src="./images/atualizacao.png" alt="Ícone atualização" class="icon">
+                    <h3>Atualização Instantânea</h3>
+                    <p>Edite itens e mantenha seu cardápio sempre atualizado.</p>
+                </div>
+
+                <div class="card">
+                    <img src="./images/compartilhar.png" alt="Ícone compartilhar" class="icon">
+                    <h3>Compartilhamento Fácil</h3>
+                    <p>Compartilhe seu cardápio por link ou QR Code.</p>
+                </div>
+
+                <div class="card">
+                    <img src="./images/design.png" alt="Ícone design" class="icon">
+                    <h3>Design Personalizado</h3>
+                    <p>Seu cardápio do seu jeito, com organização e clareza.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Chamada para Ação Secundária -->
+    <section class="cta">
+        <div class="container cta-flex">
+            <div class="cta-text">
+                <h2>Transforme agora seu cardápio</h2>
+                <p>Comece hoje a organizar seus lanches, produtos e preços. Fácil, rápido e prático!</p>
+                <a href="cadastro.html" class="btn">Quero meu Foodie App</a>
+            </div>
+            <div class="cta-image">
+                <img src="./images/007-portrait.png" alt="Imagem CTA">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Preços -->
+    <section id="precos" class="precos">
+        <div class="container">
+            <h2>Planos e Preços</h2>
+            <div class="tabela-precos">
+                <div class="plano">
+                    <h3>Grátis</h3>
+                    <p>Perfeito para começar</p>
+                    <ul>
+                        <li>✔ Cadastro de até 10 itens</li>
+                        <li>✔ Compartilhamento por link</li>
+                        <li>✔ Edição básica</li>
+                    </ul>
+                    <p class="preco">R$ 0,00</p>
+                </div>
+                <div class="plano destaque">
+                    <h3>Profissional</h3>
+                    <p>Para pequenos negócios</p>
+                    <ul>
+                        <li>✔ Itens ilimitados</li>
+                        <li>✔ Personalização avançada</li>
+                        <li>✔ QR Code gerado automaticamente</li>
+                        <li>✔ Suporte prioritário</li>
+                    </ul>
+                    <p class="preco">R$ 29,90/mês</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Contato -->
+    <section id="contato" class="form-section">
+        <div class="container form-flex">
+            <div class="form-text">
+                <h2>Fale com a gente</h2>
+                <p>Envie sua mensagem ou dúvida. Estamos prontos para ajudar!</p>
+            </div>
+            <form action="confirmacao.html" method="get" class="formulario">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="politica.html">Política de Privacidade</a>
+                <a href="termos.html">Termos de Uso</a>
+                <a href="suporte.html">Suporte</a>
+            </div>
+            <p>&copy; 2025 Foodie App. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

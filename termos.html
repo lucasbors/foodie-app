@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Uso - Foodie App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+    // Efeito ao carregar a página
+    document.addEventListener("DOMContentLoaded", function() {
+        document.body.classList.add('show');
+    });
+
+    // Efeito ao trocar de página
+    const links = document.querySelectorAll('a[href]');
+    links.forEach(link => {
+        const url = link.getAttribute('href');
+        if (!url.startsWith('#') && !url.startsWith('javascript') && !link.hasAttribute('target')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.body.classList.remove('show');
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 300); // Tempo menor que o CSS para parecer natural
+            });
+        }
+    });
+</script>
+
+<body class="fade">
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="./images/logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pagina-info">
+    <div class="container">
+        <h1>Termos de Uso</h1>
+
+        <h2>1. Termos</h2>
+        <p>Ao acessar o site <strong>Foodie App</strong>, você concorda em cumprir estes termos de serviço, bem como todas as leis e regulamentos aplicáveis. Você também concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de utilizar ou acessar este site. Todos os materiais presentes neste site são protegidos pelas leis de direitos autorais e marcas comerciais.</p>
+
+        <h2>2. Uso de Licença</h2>
+        <p>É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site <strong>Foodie App</strong> apenas para visualização pessoal e não comercial. Esta é a concessão de uma licença, não uma transferência de título. Sob esta licença, você não pode:</p>
+        <ul>
+            <li>❌ Modificar ou copiar os materiais;</li>
+            <li>❌ Usar os materiais para qualquer finalidade comercial ou exibição pública (comercial ou não comercial);</li>
+            <li>❌ Tentar descompilar ou fazer engenharia reversa de qualquer software contido no site <strong>Foodie App</strong>;</li>
+            <li>❌ Remover quaisquer direitos autorais ou outras notações de propriedade dos materiais;</li>
+            <li>❌ Transferir os materiais para outra pessoa ou espelhar os materiais em qualquer outro servidor.</li>
+        </ul>
+        <p>Esta licença será automaticamente encerrada se você violar qualquer uma dessas restrições e poderá ser encerrada pelo <strong>Foodie App</strong> a qualquer momento. Após encerrar a visualização desses materiais ou após o término da licença, você deve apagar todos os materiais baixados, sejam eletrônicos ou impressos.</p>
+
+        <h2>3. Isenção de Responsabilidade</h2>
+        <p>Os materiais no site do <strong>Foodie App</strong> são fornecidos “como estão”. O <strong>Foodie App</strong> não oferece garantias, expressas ou implícitas, e, por meio deste, isenta-se e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas de comercialização, adequação a um propósito específico ou não violação de propriedade intelectual.</p>
+        <p>Além disso, o <strong>Foodie App</strong> não garante a precisão, os resultados ou a confiabilidade do uso dos materiais em seu site ou de qualquer outra forma relacionada a esses materiais ou em sites vinculados.</p>
+
+        <h2>4. Limitações</h2>
+        <p>Em nenhum caso o <strong>Foodie App</strong> ou seus fornecedores serão responsáveis por quaisquer danos (incluindo perda de dados, lucro ou interrupção dos negócios) decorrentes do uso ou da incapacidade de usar os materiais no <strong>Foodie App</strong>, mesmo que um representante autorizado tenha sido notificado sobre a possibilidade desses danos.</p>
+        <p>Algumas jurisdições não permitem limitações de garantias implícitas ou de responsabilidade por danos incidentais, portanto essas limitações podem não se aplicar a você.</p>
+
+        <h2>5. Precisão dos Materiais</h2>
+        <p>Os materiais exibidos no site do <strong>Foodie App</strong> podem conter erros técnicos, tipográficos ou fotográficos. O <strong>Foodie App</strong> não garante que qualquer material no site seja preciso, completo ou atual. O <strong>Foodie App</strong> pode realizar alterações nos materiais contidos em seu site a qualquer momento, sem aviso prévio. No entanto, não se compromete a atualizar os materiais.</p>
+
+        <h2>6. Links</h2>
+        <p>O <strong>Foodie App</strong> não analisou todos os sites vinculados ao seu site e não se responsabiliza pelo conteúdo de nenhum deles. A inclusão de qualquer link não implica endosso por parte do <strong>Foodie App</strong>. O uso de qualquer site vinculado é por conta e risco do usuário.</p>
+
+        <h2>Modificações</h2>
+        <p>O <strong>Foodie App</strong> pode revisar estes termos de serviço do site a qualquer momento, sem aviso prévio. Ao utilizar este site, você concorda em se vincular à versão atual desses termos.</p>
+
+        <h2>Lei Aplicável</h2>
+        <p>Estes termos e condições são regidos e interpretados de acordo com as leis aplicáveis ao <strong>Foodie App</strong>, e você se submete irrevogavelmente à jurisdição exclusiva dos tribunais da localidade onde o <strong>Foodie App</strong> opera.</p>
+    </div>
+    </main>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="politica.html">Política de Privacidade</a>
+                <a href="termos.html">Termos de Uso</a>
+                <a href="suporte.html">Suporte</a>
+            </div>
+            <p>&copy; 2025 Foodie App. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

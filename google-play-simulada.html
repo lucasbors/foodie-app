@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie App - Apps na Google Play</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<script>
+    // Efeito ao carregar a página
+    document.addEventListener("DOMContentLoaded", function() {
+        document.body.classList.add('show');
+    });
+
+    // Efeito ao trocar de página
+    const links = document.querySelectorAll('a[href]');
+    links.forEach(link => {
+        const url = link.getAttribute('href');
+        if (!url.startsWith('#') && !url.startsWith('javascript') && !link.hasAttribute('target')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.body.classList.remove('show');
+                setTimeout(() => {
+                    window.location.href = url;
+                }, 300); // Tempo menor que o CSS para parecer natural
+            });
+        }
+    });
+</script>
+
+<body class="fade">
+
+    <!-- Header Fake Google -->
+    <header class="google-header">
+        <div class="container">
+            <h1 class="logo-google">Google Play</h1>
+        </div>
+    </header>
+
+    <!-- Conteúdo -->
+    <section class="play-app">
+        <div class="container">
+            <div class="app-info">
+                <img src="./images/logo.png" alt="Foodie App" class="app-icon">
+                <div class="info-text">
+                    <h2>Foodie App</h2>
+                    <p>Grupo 38 - Projeto Integrador</p>
+                    <div class="avaliacao">
+                        ⭐⭐⭐⭐☆ (4.8) · 10k+ downloads
+                    </div>
+                    <a href="./FoodieApp.apk" class="btn">Instalar</a>
+                </div>
+            </div>
+
+            <div class="app-galeria">
+                <img src="./images/002-portrait.png" alt="Print App">
+                <img src="./images/004-portrait.png" alt="Print App">
+                <img src="./images/007-portrait.png" alt="Print App">
+            </div>
+
+            <div class="descricao">
+                <h3>Sobre este app</h3>
+                <p>O jeito mais fácil e prático de criar e gerenciar seu cardápio digital. Ideal para pequenos negócios, food trucks e amantes da gastronomia. Organize seus pratos, atualize preços e compartilhe com seus clientes.</p>
+                <ul>
+                    <li>✔ Cadastro de produtos com fotos</li>
+                    <li>✔ Atualização rápida de preços e descrições</li>
+                    <li>✔ Compartilhamento por link e QR Code</li>
+                    <li>✔ Interface simples e intuitiva</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Fake -->
+    <footer>
+        <div class="container">
+            <p>Esta é uma página simulada para fins acadêmicos - Foodie App.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
